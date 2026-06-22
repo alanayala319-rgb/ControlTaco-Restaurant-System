@@ -1,8 +1,9 @@
+
 # ControlTaco
 
 ControlTaco es un MVP web para administrar operaciones basicas de un restaurante: login, dashboard, mesas, pedidos, inventario y ventas. El proyecto esta organizado como monorepo con frontend y backend separados.
 
-## Stack del proyecto
+## Stack del proyectoo
 
 - Frontend: React + Vite + TypeScript.
 - Estilos: CSS moderno sin framework UI.
@@ -209,3 +210,6 @@ Pendientes recomendados para una version final:
 - Unificar la fuente de datos para que no dependa de `localStorage`.
 - Agregar validaciones mas estrictas y roles de usuario.
 - Agregar tickets/facturas y reportes mas avanzados.
+=======
+# ControlTaco-Restaurant-System
+Sistema web de administración de restaurantes desarrollado con React, TypeScript, Node.js, Express y MongoDB. Permite gestionar mesas, pedidos, inventario y ventas mediante una arquitectura full stack moderna.
