@@ -32,7 +32,9 @@ jobs:
     # Esto garantiza que la lógica de negocio funcione antes del deploy.
     - name: Run Backend Tests
       working-directory: ./backend
-      run: npx vitest run src
+      run: |
+        chmod +x node_modules/.bin/vitest
+        npm test
 
     # Paso 5: Instalar dependencias y Build del Frontend
     - name: Install Frontend Dependencies
