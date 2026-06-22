@@ -1,3 +1,4 @@
+[![ControlTaco CI/CD](https://github.com/alanayala319-rgb/ControlTaco-Restaurant-System/actions/workflows/ci.yml/badge.svg)](https://github.com/alanayala319-rgb/ControlTaco-Restaurant-System/actions/workflows/ci.yml)
 
 # ControlTaco
 
