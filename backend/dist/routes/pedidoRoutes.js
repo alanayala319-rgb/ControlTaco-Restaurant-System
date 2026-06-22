@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const pedidoController_1 = require("../controllers/pedidoController");
+const router = (0, express_1.Router)();
+router.post('/cuenta', pedidoController_1.abrirCuenta);
+router.post('/', pedidoController_1.crearPedido);
+router.get('/cuenta/:cuentaId', pedidoController_1.getPedidosPorCuenta);
+router.post('/cobrar', pedidoController_1.cobrarCuenta);
+exports.default = router;

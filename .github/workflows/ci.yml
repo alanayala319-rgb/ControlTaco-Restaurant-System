@@ -1,0 +1,44 @@
+name: ControlTaco CI/CD
+
+# Este pipeline se dispara automáticamente cada vez que hacemos push a la rama main
+# o abrimos un Pull Request hacia main, asegurando la calidad del código antes de llegar a PROD.
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # Paso 1: Clonar el repositorio
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    # Paso 2: Configurar Node.js (Entorno de ejecución)
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    # Paso 3: Instalar dependencias del Backend
+    - name: Install Backend Dependencies
+      working-directory: ./backend
+      run: npm install
+
+    # Paso 4: Ejecutar Pruebas Automatizadas (Unit Testing)
+    # Esto garantiza que la lógica de negocio funcione antes del deploy.
+    - name: Run Backend Tests
+      working-directory: ./backend
+      run: npm test
+
+    # Paso 5: Instalar dependencias y Build del Frontend
+    - name: Install Frontend Dependencies
+      working-directory: ./frontend
+      run: npm install
+
+    - name: Build Frontend
+      working-directory: ./frontend
+      run: npm run build
